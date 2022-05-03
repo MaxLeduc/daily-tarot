@@ -1,8 +1,15 @@
 name = "todo-app"
 type = "javascript"
 
-account_id = ""
+account_id = "185d58287bf2098c587b55537584b1bf"
 workers_dev = true
 route = ""
 zone_id = ""
 compatibility_date = "2022-05-03"
+
+[build]
+command = "yarn build"
+watch_dir = "/worker"
+
+[build.upload]
+format = "service-worker"
