@@ -7,8 +7,12 @@ route = ""
 zone_id = ""
 compatibility_date = "2022-05-03"
 
+[site]
+bucket = "./dist/app"
+entry-point = "./"
+
 [build]
-command = "yarn build"
+command = "yarn build:worker"
 watch_dir = "/worker"
 
 [build.upload]
