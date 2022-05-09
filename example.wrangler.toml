@@ -1,7 +1,7 @@
 name = "todo-app"
 type = "javascript"
 
-account_id = "185d58287bf2098c587b55537584b1bf"
+account_id = ""
 workers_dev = true
 route = ""
 zone_id = ""
