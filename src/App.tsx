@@ -1,7 +1,7 @@
-import { BasicList } from './components'
+import { BasicTable } from './components'
 
 function App() {
-  return <BasicList />
+  return <BasicTable />
 }
 
 export default App

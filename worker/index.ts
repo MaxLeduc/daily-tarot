@@ -18,8 +18,15 @@ router.get('/api/lists/:id', async request => {
 
 router.get('/api/lists', async () => {
   const data = await new List().getAll()
+  const headers: { [key: string]: string } = {}
 
-  return new Response(JSON.stringify({ data }))
+  // todo: abstract into a get response utility function
+  if (ENV === 'dev') {
+    headers['Access-Control-Allow-Origin'] = 'http://localhost:3000'
+    headers['Content-type'] = 'application/json'
+  }
+
+  return new Response(JSON.stringify({ data }), { headers })
 })
 
 router.get('/api/todos/:id', request => {

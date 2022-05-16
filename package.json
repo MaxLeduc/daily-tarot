@@ -5,12 +5,13 @@
   "description": "A template for kick starting a Cloudflare Workers project",
   "main": "dist/worker/index.js",
   "scripts": {
+    "dev:app": "vite",
+    "dev:worker": "yarn miniflare --live-reload --port 8888",
     "build:app": "tsc && vite build",
     "build:worker": "esbuild ./worker/index.js --bundle --outdir=dist/worker",
-    "dev": "yarn miniflare --live-reload",
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier --write '**/*.{js,css,json,md}'",
-    "deploy": "wrangler publish"
+    "deploy": "wrangler publish --env production"
   },
   "author": "MaxLeduc <leduc.maximep@gmail.com>",
   "license": "MIT",
@@ -29,7 +30,9 @@
     "@cloudflare/kv-asset-handler": "^0.2.0",
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
+    "@mui/icons-material": "^5.6.2",
     "@mui/material": "^5.7.0",
+    "@mui/x-data-grid": "^5.11.0",
     "@supabase/supabase-js": "^1.35.2",
     "itty-router": "^2.6.1",
     "react": "^18.0.0",
