@@ -4,6 +4,18 @@ import List from './models/List'
 
 const router = Router()
 
+const getStandardResponse = (data: any[] | null) => {
+  const headers: { [key: string]: string } = {
+    'Content-type': 'application/json',
+  }
+
+  if (ENV === 'dev') {
+    headers['Access-Control-Allow-Origin'] = 'http://localhost:3000'
+  }
+
+  return new Response(JSON.stringify({ data: data }), { headers })
+}
+
 router.get('/api/lists/:id', async request => {
   const params = request.params
 
@@ -13,36 +25,25 @@ router.get('/api/lists/:id', async request => {
 
   const data = await new List().get(params.id)
 
-  return new Response(JSON.stringify({ data }))
+  return getStandardResponse(data)
 })
 
 router.get('/api/lists', async () => {
   const data = await new List().getAll()
-  const headers: { [key: string]: string } = {}
 
-  // todo: abstract into a get response utility function
-  if (ENV === 'dev') {
-    headers['Access-Control-Allow-Origin'] = 'http://localhost:3000'
-    headers['Content-type'] = 'application/json'
-  }
-
-  return new Response(JSON.stringify({ data }), { headers })
+  return getStandardResponse(data)
 })
 
-router.get('/api/todos/:id', request => {
-  const params = request.params
-
-  return new Response(`Id is ${params?.id}`)
+router.get('/assets/*', async (request, event: FetchEvent) => {
+  return await getAssetFromKV(event)
 })
-
-router.post('/api/todos', request => {})
 
 router.get('/', async (request, event: FetchEvent) => {
   return await getAssetFromKV(event)
 })
 
-router.get('/assets/*', async (request, event: FetchEvent) => {
-  return await getAssetFromKV(event)
+router.get('/*', () => {
+  return new Response('Not Found.', { status: 404 })
 })
 
 addEventListener('fetch', event => {
