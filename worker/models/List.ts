@@ -38,4 +38,13 @@ export default class List {
 
     return res.data
   }
+
+  getListTasks = async (id: string, columns: string = '*') => {
+    const res = await this.client
+      .from('Tasks')
+      .select(columns)
+      .eq('list_id', id)
+
+    return res.data
+  }
 }

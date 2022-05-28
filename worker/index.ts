@@ -34,6 +34,18 @@ router.get('/api/lists', async () => {
   return getStandardResponse(data)
 })
 
+router.get('/api/lists/:id/tasks', async request => {
+  const params = request.params
+
+  if (!params || !params.id) {
+    return new Response('Param `id` is missing', { status: 400 })
+  }
+
+  const data = await new List().getListTasks(params.id)
+
+  return getStandardResponse(data)
+})
+
 router.get('/assets/*', async (request, event: FetchEvent) => {
   return await getAssetFromKV(event)
 })

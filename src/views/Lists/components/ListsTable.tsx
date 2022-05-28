@@ -1,10 +1,9 @@
 import { useContext } from 'react'
 import { DataGrid, GridColDef, GridRowParams } from '@mui/x-data-grid'
-import { ListContext } from '../../../providers'
 import { NavigateFunction, useNavigate } from 'react-router-dom'
 
-// todo: make this a ListsTable instead
-// move to /views/Lists
+import { ListContext } from '@app/providers'
+
 const columns: GridColDef[] = [
   { field: 'id', headerName: 'ID' },
   { field: 'name', headerName: 'Name' },
