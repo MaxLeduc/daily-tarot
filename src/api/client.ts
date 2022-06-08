@@ -8,4 +8,4 @@ class APIClient {
   }
 }
 
-export default APIClient
+export default new APIClient()
