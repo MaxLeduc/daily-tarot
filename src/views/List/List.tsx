@@ -5,6 +5,7 @@ import Button from '@mui/material/Button'
 import { ListContext } from '@app/providers'
 import { List } from '@app/types'
 import { APIClient } from '@app/api'
+import { ViewContainer } from '@app/components'
 
 import { TasksTable } from './components'
 import { useEffect } from 'react'
@@ -48,7 +49,7 @@ export default function SingleListView() {
   const formattedCreatedAt = new Date(created_at).toDateString()
 
   return (
-    <>
+    <ViewContainer>
       <h1>List: {name}</h1>
       <p>Created At: {formattedCreatedAt}</p>
       <Link
@@ -58,6 +59,6 @@ export default function SingleListView() {
         <Button variant="contained">Add Task</Button>
       </Link>
       <TasksTable />
-    </>
+    </ViewContainer>
   )
 }

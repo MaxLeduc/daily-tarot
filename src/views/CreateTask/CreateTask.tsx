@@ -9,6 +9,7 @@ import Button from '@mui/material/Button'
 import { ListContext } from '@app/providers'
 import { List } from '@app/types'
 import { APIClient } from '@app/api'
+import { ViewContainer } from '@app/components'
 
 export default function CreateTask() {
   const { id: listId } = useParams()
@@ -46,7 +47,7 @@ export default function CreateTask() {
   }
 
   return (
-    <>
+    <ViewContainer>
       <h1>Create Task for List: {currentList.name}</h1>
       <Box component="form" noValidate autoComplete="off">
         <Card style={{ width: '100%' }}>
@@ -67,6 +68,6 @@ export default function CreateTask() {
           </CardContent>
         </Card>
       </Box>
-    </>
+    </ViewContainer>
   )
 }

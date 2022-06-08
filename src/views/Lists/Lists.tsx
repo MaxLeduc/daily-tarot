@@ -3,8 +3,10 @@ import { useEffect, useContext } from 'react'
 import { APIClient } from '@app/api'
 import { ListContext } from '@app/providers'
 import { List } from '@app/types'
+import { ViewContainer } from '@app/components'
 
 import { ListsTable } from './components'
+
 export default function Lists() {
   const { setLists } = useContext(ListContext)
 
@@ -25,5 +27,9 @@ export default function Lists() {
     fetchLists()
   }, [])
 
-  return <ListsTable />
+  return (
+    <ViewContainer>
+      <ListsTable />
+    </ViewContainer>
+  )
 }
