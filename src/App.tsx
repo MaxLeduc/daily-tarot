@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
-import { Lists, List } from '@app/views'
+import { Lists, List, CreateTask } from '@app/views'
 import { ListProvider } from '@app/providers'
 
 function App() {
@@ -10,6 +10,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Lists />} />
           <Route path="/lists/:id" element={<List />} />
+          <Route path="/lists/:id/createTask" element={<CreateTask />} />
         </Routes>
       </BrowserRouter>
     </ListProvider>

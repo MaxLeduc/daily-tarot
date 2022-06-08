@@ -1,25 +1,44 @@
 import { useContext, useMemo } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
+import Button from '@mui/material/Button'
 
 import { ListContext } from '@app/providers'
 import { List } from '@app/types'
+import { APIClient } from '@app/api'
 
 import { TasksTable } from './components'
+import { useEffect } from 'react'
 
 export default function SingleListView() {
   const { id: listId } = useParams()
-  const listValues = useContext(ListContext)
+  const { lists, setLists } = useContext(ListContext)
 
-  if (!listValues || !listId) {
-    console.error('Lists or ID param missing.')
+  if (!listId) {
+    console.error('Invalid list ID param.')
 
     return null
   }
 
   const currentList = useMemo(
-    () => listValues.lists.find((list: List) => list.id === Number(listId)),
-    [listValues, listId],
+    () => lists.find((list: List) => list.id === Number(listId)),
+    [lists, listId],
   )
+
+  useEffect(() => {
+    const fetchList = async () =>
+      await APIClient.get(`/api/lists/${listId}`)
+        .then(res => res.json())
+        .then(({ data }) => {
+          if (setLists) {
+            setLists(data as List[])
+          }
+        })
+        .catch(e => console.error(e))
+
+    if (!currentList) {
+      fetchList()
+    }
+  }, [currentList])
 
   if (!currentList) {
     return null
@@ -32,6 +51,12 @@ export default function SingleListView() {
     <>
       <h1>List: {name}</h1>
       <p>Created At: {formattedCreatedAt}</p>
+      <Link
+        to={`/lists/${listId}/createTask`}
+        style={{ textDecoration: 'none' }}
+      >
+        <Button variant="contained">Add Task</Button>
+      </Link>
       <TasksTable />
     </>
   )

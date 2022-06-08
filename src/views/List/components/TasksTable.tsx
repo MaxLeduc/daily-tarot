@@ -24,8 +24,7 @@ export default function TasksTable() {
 
     const fetchTasks = async () => {
       isLoading = true
-      await new APIClient()
-        .get(`/api/lists/${listId}/tasks`)
+      await APIClient.get(`/api/lists/${listId}/tasks`)
         .then(res => res.json())
         .then(({ data }) => {
           isLoading = false
