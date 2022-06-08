@@ -1,4 +1,7 @@
-import { getAssetFromKV } from '@cloudflare/kv-asset-handler'
+import {
+  getAssetFromKV,
+  serveSinglePageApp,
+} from '@cloudflare/kv-asset-handler'
 import { Router } from 'itty-router'
 import List from './models/List'
 
@@ -50,11 +53,11 @@ router.get('/assets/*', async (request, event: FetchEvent) => {
   return await getAssetFromKV(event)
 })
 
-router.get('/', async (request, event: FetchEvent) => {
-  return await getAssetFromKV(event)
+router.get('/*', async (request, event: FetchEvent) => {
+  return await getAssetFromKV(event, { mapRequestToAsset: serveSinglePageApp })
 })
 
-router.get('/*', () => {
+router.get('/api/*', () => {
   return new Response('Not Found.', { status: 404 })
 })
 
