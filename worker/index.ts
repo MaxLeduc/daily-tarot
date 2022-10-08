@@ -3,11 +3,11 @@ import {
   serveSinglePageApp,
 } from '@cloudflare/kv-asset-handler'
 import { Router } from 'itty-router'
-import List from './models/List'
 
+const deck = []
 const router = Router()
 
-const getStandardResponse = (data: any[] | null) => {
+const getStandardResponse = (data: any | null) => {
   const headers: { [key: string]: string } = {
     'Content-type': 'application/json',
   }
@@ -19,37 +19,23 @@ const getStandardResponse = (data: any[] | null) => {
   return new Response(JSON.stringify({ data: data }), { headers })
 }
 
-router.get('/api/lists/:id', async request => {
-  const params = request.params
+router.get('/api/cards/random', async () => {
+  const listOfCardKeys = await CARDS.list()
+  const length = listOfCardKeys.keys.length
+  const randomNumber = Math.floor(Math.random() * length)
+  const card = await CARDS.get(`${randomNumber}`)
 
-  if (!params || !params?.id) {
-    return new Response('Param `id` is missing', { status: 400 })
-  }
-
-  const data = await new List().get(params.id)
-
-  return getStandardResponse(data)
+  return getStandardResponse(card)
 })
 
-router.get('/api/lists', async () => {
-  const data = await new List().getAll()
+router.get('/api/card_ids', async () => {
+  const listOfCardKeys = await CARDS.list()
 
-  return getStandardResponse(data)
-})
-
-router.get('/api/lists/:id/tasks', async request => {
-  const params = request.params
-
-  if (!params || !params.id) {
-    return new Response('Param `id` is missing', { status: 400 })
-  }
-
-  const data = await new List().getListTasks(params.id)
-
-  return getStandardResponse(data)
+  return getStandardResponse(listOfCardKeys.keys)
 })
 
 router.get('/assets/*', async (request, event: FetchEvent) => {
+  console.log(event.request)
   return await getAssetFromKV(event)
 })
 
