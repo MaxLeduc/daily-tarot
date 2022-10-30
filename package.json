@@ -9,10 +9,12 @@
     "dev:worker": "yarn miniflare --live-reload --port 8888 --kv-persist ./local_kv/",
     "build:app": "tsc && vite build",
     "build:worker": "esbuild ./worker/index.js --bundle --outdir=dist/worker",
+    "restart:app": "tsc && vite build && vite",
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier --write '**/*.{js,css,json,md}'",
     "deploy": "yarn build:app && wrangler publish --env production",
-    "seed:cards": "node ./data/index && wrangler kv:bulk put --binding=CARDS ./data/output/formatted_cards.json --env=production"
+    "seed:local": "node ./data/index",
+    "seed:production": "node ./data/index && wrangler kv:bulk put --binding=CARDS ./data/output/formatted_cards.json --env=production"
   },
   "author": "MaxLeduc <leduc.maximep@gmail.com>",
   "license": "MIT",

@@ -1,12 +1,13 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { AppBackground } from '@app/components'
-import { Home } from '@app/views'
+import { CardList, Home } from '@app/views'
 
 function Router() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/card-list" element={<CardList />} />
       </Routes>
     </BrowserRouter>
   )

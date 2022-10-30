@@ -1,31 +1,23 @@
-import { memo, useState } from 'react'
+import { memo } from 'react'
 import styled from 'styled-components'
-import Drawer from '@material-ui/core/Drawer'
-import { makeStyles } from '@material-ui/core/styles'
-import Typist from 'react-typist'
 
 import { Card } from '@app/types'
 
-const useStyles = makeStyles({
-  paperDark: {
-    background: '#000e1b',
-    color: 'white',
-  },
-})
-
 const StyledImage = styled.img`
-  width: 300px;
-  max-width: 90%;
+  width: 100%;
   border: 1px solid white;
   padding: 5px;
   border-radius: 5px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 `
 
 const StyledButton = styled.button`
   border: none;
   background-color: transparent;
   cursor: pointer;
+  display: block;
+  max-width: 70%;
+  margin: 0 auto;
 `
 
 function CardLayout({
@@ -35,14 +27,14 @@ function CardLayout({
   card: Card
   setOpenDrawer: (isOpen: boolean) => void
 }) {
-  const { slug } = card
+  const { url } = card
 
   return (
     <StyledButton onClick={() => setOpenDrawer(true)}>
       <StyledImage
         src={`${
           import.meta.env.DEV ? import.meta.env.VITE_LOCAL_BACKEND_URL : ''
-        }/assets/${slug}.svg`}
+        }${url}`}
       />
     </StyledButton>
   )

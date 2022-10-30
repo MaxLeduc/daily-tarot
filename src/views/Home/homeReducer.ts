@@ -5,6 +5,7 @@ type StateTypes =
   | 'BUTTONS_SHOWING'
   | 'CARD_READING'
   | 'CARD_SHOWING'
+  | 'READING_STOPPED'
 
 export type AppState = {
   card: Card | null
@@ -26,7 +27,15 @@ type ShowReadingAction = {
   }
 }
 
-export type Actions = ShowCardAction | ShowButtonsAction | ShowReadingAction
+type StopReading = {
+  type: 'STOP_READING'
+}
+
+export type Actions =
+  | ShowCardAction
+  | ShowButtonsAction
+  | ShowReadingAction
+  | StopReading
 
 // const TempCard = {
 //   id: 1,
@@ -61,6 +70,11 @@ export const reducer = (state: AppState, action: Actions) => {
       return {
         ...state,
         currentState: 'CARD_SHOWING' as StateTypes,
+      }
+    case 'STOP_READING':
+      return {
+        ...state,
+        currentState: 'READING_STOPPED' as StateTypes,
       }
     default:
       return state

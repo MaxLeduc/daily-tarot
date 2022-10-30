@@ -8,6 +8,8 @@ export type Card = {
   slug: string
   description: string
   upright: string
-  reversed: string
   type: CardType['name']
+  url: string
+  secret_type: string
+  wiki_link: ''
 }

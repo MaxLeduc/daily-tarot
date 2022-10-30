@@ -5,10 +5,29 @@ import styled from 'styled-components'
 import { ViewContainer, Button, ButtonWrapper } from '@app/components'
 import { Card } from '@app/types'
 import { Actions } from '@app/views'
+import { getRandomMessage } from '@app/helpers'
 
 export const TextWrapper = styled.div`
   margin-bottom: 20px;
 `
+
+const getRandomFortune = (fortunes: string[], secret: string) => {
+  const randomNumber = Math.floor(Math.random() * fortunes.length)
+  const words = fortunes.filter((val, i) => i <= randomNumber)
+  const before = `${secret ? `${secret} ` : ''}`
+
+  if (words.length === 1) {
+    return `${before} I see ${words[0]} in your future.`
+  }
+
+  const popped = words.pop()
+  const lastFortune = popped ? ` and ${popped}` : ''
+
+  console.log({ words, popped })
+
+  return `${before}
+ I see ${words.join(', ')}${lastFortune}  in your future.`
+}
 
 function TarotReadingView({
   card,
@@ -18,19 +37,29 @@ function TarotReadingView({
   dispatch: Dispatch<Actions>
 }) {
   const [isDoneTyping, setIsDoneTyping] = useState(false)
-
+  const fortuneWords = card.upright.toLowerCase().split(',')
   const text = useMemo(
     () => ({
       agreementMessage: 'Very well then.',
-      mmmm: 'Mmmm.',
-      uprightMessage: `I see ${card.upright.toLowerCase()} in your future.`,
+      letMeSee: 'Let me see.',
       interesting: 'Interesting.',
-      seeCardMessage: 'Do you wish to see your card?',
+      facinating: 'Facinating.',
+      intriguing: 'Intriguing.',
+      seeCardMessage: 'I picked a card for you, do you wish to see it?',
       yes: 'Yes',
       no: 'No',
+      secret: `${
+        card.secret_type === 'Great Secret' ? 'Great things await you.' : ''
+      }`,
     }),
     [],
   )
+  const randomMessage = getRandomMessage([
+    text.interesting,
+    text.facinating,
+    text.intriguing,
+  ])
+  const fortune = getRandomFortune(fortuneWords, text.secret)
 
   return (
     <ViewContainer>
@@ -38,14 +67,14 @@ function TarotReadingView({
         <Typist onTypingDone={() => setIsDoneTyping(true)}>
           <span>{text.agreementMessage}</span>
           <Typist.Backspace count={text.agreementMessage.length} delay={200} />
-          <span>{text.mmmm}</span>
-          <Typist.Backspace count={text.mmmm.length} delay={200} />
-          <span>{text.interesting}</span>
-          <Typist.Backspace count={text.interesting.length} delay={200} />
+          <span>{text.letMeSee}</span>
+          <Typist.Backspace count={text.letMeSee.length} delay={200} />
+          <span>{randomMessage}</span>
           <Typist.Delay ms={500} />
-          <span>{text.uprightMessage}</span>
+          <Typist.Backspace count={randomMessage.length} delay={200} />
+          <span>{fortune}</span>
           <Typist.Delay ms={1000} />
-          <Typist.Backspace count={text.uprightMessage.length} delay={200} />
+          <Typist.Backspace count={fortune.length} delay={200} />
           <span>{text.seeCardMessage}</span>
         </Typist>
       </TextWrapper>
@@ -53,7 +82,13 @@ function TarotReadingView({
         <Button onClick={() => dispatch({ type: 'SHOW_CARD' })} inverted>
           {text.yes}
         </Button>
-        <Button>{text.no}</Button>
+        <Button
+          onClick={() => {
+            dispatch({ type: 'STOP_READING' })
+          }}
+        >
+          {text.no}
+        </Button>
       </ButtonWrapper>
     </ViewContainer>
   )

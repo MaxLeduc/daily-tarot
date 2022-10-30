@@ -9,7 +9,7 @@ import { TextWrapper } from './styled'
 
 const fetchCard = async () => {
   const res = await APIClient.get('/api/cards/random').then(res => res.json())
-  return JSON.parse(res.data)
+  return res.data
 }
 
 function IntroView({
@@ -23,8 +23,8 @@ function IntroView({
     () => ({
       welcomeMessage: 'Hello Stranger.',
       question: 'Shall I look into your future?',
-      yes: 'YES',
-      no: 'NO',
+      yes: 'Yes',
+      no: 'No',
     }),
     [],
   )
@@ -58,7 +58,13 @@ function IntroView({
         >
           {text.yes}
         </Button>
-        <Button>{text.no}</Button>
+        <Button
+          onClick={() => {
+            dispatch({ type: 'STOP_READING' })
+          }}
+        >
+          {text.no}
+        </Button>
       </ButtonWrapper>
     </ViewContainer>
   )

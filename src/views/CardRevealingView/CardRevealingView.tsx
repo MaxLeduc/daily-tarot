@@ -16,7 +16,7 @@ const useStyles = makeStyles({
 
 const TypistWrapper = styled.div`
   * > span {
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
 `
 
@@ -27,8 +27,8 @@ const Inner = styled.div`
 `
 
 const StyledDescription = styled.p`
-  line-height: 1.7rem;
-  font-size: 1.2rem;
+  line-height: 1.5rem;
+  font-size: 1.1rem;
 `
 
 const CloseButton = styled.button`
@@ -54,6 +54,27 @@ const fadeInAnimation = keyframes`
 const FadeInContainer = styled.div`
   animation-name: ${fadeInAnimation};
   animation-duration: 5s;
+  width: 100%;
+`
+
+const StyledTitle = styled.h1`
+  font-family: 'Berkshire Swash';
+  font-size: 3rem;
+  margin: 25px 0 10px 0;
+  text-align: center;
+`
+
+const StyledUnderTitle = styled.h4`
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 0 0 20px 0;
+  font-style: italic;
+  font-weight: normal;
+`
+
+const StyledLink = styled.a`
+  color: white;
 `
 
 const toggleDrawer = (
@@ -71,9 +92,24 @@ const toggleDrawer = (
   setOpenDrawer(open)
 }
 
+const getFormattedDescription = (description: string) => {
+  const sentences = description.split('. ')
+
+  return (
+    <>
+      {sentences.map(sentence => {
+        return (
+          <StyledDescription>{sentence.replace('.', '')}.</StyledDescription>
+        )
+      })}
+    </>
+  )
+}
+
 function CardRevealingView({ card }: { card: Card }) {
   const [openDrawer, setOpenDrawer] = useState<boolean>(false)
   const classes = useStyles()
+  const formattedDescription = getFormattedDescription(card.description)
 
   return (
     <ViewContainer>
@@ -102,7 +138,7 @@ function CardRevealingView({ card }: { card: Card }) {
         >
           <CloseButton onClick={() => setOpenDrawer(false)}>Close</CloseButton>
           <Inner>
-            <h1>
+            <StyledTitle>
               {card.slug
                 .split('_')
                 .map(element => {
@@ -112,10 +148,19 @@ function CardRevealingView({ card }: { card: Card }) {
                   )
                 })
                 .join(' ')}
-            </h1>
-            <h4>Type: {card.type}</h4>
-            <StyledDescription>{card.description}</StyledDescription>
-            <p>Source: Wikipedia</p>
+            </StyledTitle>
+            <StyledUnderTitle>{card.type}</StyledUnderTitle>
+            {formattedDescription}
+            <p>
+              <b>Source:</b>{' '}
+              <StyledLink
+                href={card.wiki_link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Wikipedia
+              </StyledLink>
+            </p>
           </Inner>
         </Drawer>
       </FadeInContainer>
