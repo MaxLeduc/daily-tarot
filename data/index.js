@@ -33,8 +33,6 @@ fs.writeFile('./data/output/formatted_cards.json', output, err => {
   if (err) {
     return console.log('error', err)
   }
-
-  console.log('Success')
 })
 
 data.forEach(card => {
@@ -43,6 +41,6 @@ data.forEach(card => {
       return console.log('error', err)
     }
 
-    console.log('Success')
+    console.log(`Success.`)
   })
 })

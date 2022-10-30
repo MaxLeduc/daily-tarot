@@ -11,5 +11,5 @@ export type Card = {
   type: CardType['name']
   url: string
   secret_type: string
-  wiki_link: ''
+  wiki_link: string
 }

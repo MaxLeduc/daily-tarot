@@ -1,6 +1,8 @@
 import { memo } from 'react'
 import styled from 'styled-components'
 
+import { colors } from '@app/constants'
+
 const BottomBarContainer = styled.div`
   padding-bottom: 20px;
   display: flex;
@@ -14,8 +16,10 @@ const StyledText = styled.span<{ first?: boolean }>`
 `
 
 const StyledLink = styled.a`
-  color: white;
+  color: ${colors.terciary};
   text-decoration: none;
+  padding-bottom: 3px;
+  border-bottom: 0.5px solid ${colors.terciary};
 `
 
 function BottomBar() {
@@ -31,8 +35,8 @@ function BottomBar() {
           rel="noopener noreferrer"
         >
           Maxime Leduc
-        </StyledLink>
-        , {year}
+        </StyledLink>{' '}
+        - {year}
       </StyledText>
     </BottomBarContainer>
   )

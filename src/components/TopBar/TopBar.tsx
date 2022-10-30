@@ -1,6 +1,7 @@
-import { memo } from 'react'
+import { memo, useState } from 'react'
 import styled from 'styled-components'
 import crystalBall from './assets/crystal-ball.svg'
+import alternateCrystalBall from './assets/alternate-crystal-ball.svg'
 
 const TopBarContainer = styled.div`
   padding-top: 20px;
@@ -24,10 +25,20 @@ const StyledText = styled.span<{ first?: boolean }>`
 `
 
 function TopBar() {
+  const [alternateLogo, setAlternateLogo] = useState<boolean>(true)
+
   return (
     <TopBarContainer>
       <StyledText first>Fortune</StyledText>
-      <StyledImg src={crystalBall} />
+      {alternateLogo ? (
+        <StyledImg
+          src={alternateCrystalBall}
+          onClick={() => setAlternateLogo(false)}
+        />
+      ) : (
+        <StyledImg src={crystalBall} onClick={() => setAlternateLogo(true)} />
+      )}
+
       <StyledText>Readers</StyledText>
     </TopBarContainer>
   )

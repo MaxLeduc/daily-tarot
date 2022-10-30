@@ -90,7 +90,7 @@
   {
     "id": 11,
     "slug": "justice",
-    "description": "On the card shown, though not necessarily on others, there are also four winged creatures in the corners of the card, representing the symbols of the four Evangelists (The Lion, the Ox, the Man and the Eagle). These four Evangelists are also represented by the four fixed astrological signs: Taurus, Leo, Scorpio and Aquarius. In addition a representation of the god Anubis is seen rising with the wheel on the right side, while the snake-like Typhon descends on the left. On the wheel, alternating with the letters T-A-R-O are the Hebrew letters י-ה-ו-ה, usually transliterated as YHWH (Yahweh - Hebrew for God). A common aspect to most interpretations of this card within a reading is to introduce an element of change in the querent's life, such change being in station, position or fortune: such as the rich becoming poor, or the poor becoming rich.",
+    "description": "The Justice card, as a member of the tarot deck, appears in early tarot, such as the Tarot de Marseilles. It is part of the tarot's Major Arcana, and usually follows the Chariot, as card VIII, although some decks vary from this pattern. The virtue Justice accompanies two of the other cardinal virtues in the Major Arcana: temperance and strength. The figure on the card holds a scale made of gold in their left hand, symbolizing a balanced decision.",
     "upright": "justice, truth, integrity",
     "type": 0,
     "wiki_link": "https://en.wikipedia.org/wiki/Justice_(tarot_card)"
@@ -98,10 +98,10 @@
   {
     "id": 12,
     "slug": "the_hanged_man",
-    "description": "The Justice card, as a member of the tarot deck, appears in early tarot, such as the Tarot de Marseilles. It is part of the tarot's Major Arcana, and usually follows the Chariot, as card VIII, although some decks vary from this pattern. The virtue Justice accompanies two of the other cardinal virtues in the Major Arcana: temperance and strength. The figure on the card holds a scale made of gold in their left hand, symbolizing a balanced decision.",
-    "upright": "justice, truth, integrity",
+    "description": "It depicts a pittura infamante, an image of a man being hanged upside-down by one ankle. However, the solemn expression on his face traditionally suggests that he is there by his own accord, and the card is meant to represent self-sacrifice more so than it does corporal punishment or criminality. In other interpretations, The Hanged Man is a depiction of the Norse god Odin, who suspended himself from a tree in order to gain knowledge. There is also a Christian interpretation that portrays Judas Iscariot, and include the bags of silver in his hands. In the Lo Scarabeo African American tarot deck the 12th card of the major arcana is the Observer, depicting the Nigerian god \"Ifa\" of fate and destiny blindfolded and surrounded by eyes.",
+    "upright": "sacrifice, waiting, contemplation",
     "type": 0,
-    "wiki_link": "https://en.wikipedia.org/wiki/Justice_(tarot_card)"
+    "wiki_link": "https://en.wikipedia.org/wiki/The_Hanged_Man_(tarot_card)"
   },
   {
     "id": 13,

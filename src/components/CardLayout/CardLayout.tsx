@@ -2,6 +2,7 @@ import { memo } from 'react'
 import styled from 'styled-components'
 
 import { Card } from '@app/types'
+import { colors } from '@app/constants'
 
 const StyledImage = styled.img`
   width: 100%;

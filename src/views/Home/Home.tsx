@@ -34,7 +34,7 @@ const getCurrentView = (state: AppState, dispatch: Dispatch<Actions>) => {
       return null
     }
 
-    return <CardRevealingView card={state.card} />
+    return <CardRevealingView card={state.card} dispatch={dispatch} />
   }
 
   if (state.currentState === 'CARD_READING') {

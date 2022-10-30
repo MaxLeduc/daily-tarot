@@ -24,7 +24,6 @@ router.get('/api/cards', async () => {
   const cards: (string | null)[] = []
 
   for (let i = 0; i < listOfCardKeys.keys.length; i++) {
-    console.log(i)
     const card = await CARDS.get(listOfCardKeys.keys[i].name)
 
     if (card) {
@@ -55,7 +54,6 @@ router.get('/api/card_ids', async () => {
 })
 
 router.get('/assets/*', async (request, event: FetchEvent) => {
-  console.log(event.request)
   return await getAssetFromKV(event)
 })
 

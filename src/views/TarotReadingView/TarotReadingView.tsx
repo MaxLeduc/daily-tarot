@@ -1,4 +1,4 @@
-import { memo, useMemo, Dispatch, useState } from 'react'
+import React, { memo, useMemo, Dispatch, useState } from 'react'
 import Typist from 'react-typist'
 import styled from 'styled-components'
 
@@ -6,6 +6,7 @@ import { ViewContainer, Button, ButtonWrapper } from '@app/components'
 import { Card } from '@app/types'
 import { Actions } from '@app/views'
 import { getRandomMessage } from '@app/helpers'
+import { colors } from '@app/constants'
 
 export const TextWrapper = styled.div`
   margin-bottom: 20px;
@@ -14,19 +15,57 @@ export const TextWrapper = styled.div`
 const getRandomFortune = (fortunes: string[], secret: string) => {
   const randomNumber = Math.floor(Math.random() * fortunes.length)
   const words = fortunes.filter((val, i) => i <= randomNumber)
-  const before = `${secret ? `${secret} ` : ''}`
+  const before = `${secret ? `${secret}` : ''}`
+  const first = `${before} I see `
+  const last = ` in your future.`
+  let second = ''
 
   if (words.length === 1) {
-    return `${before} I see ${words[0]} in your future.`
+    second = words[0]
+    const fortuneSentence = `${first}${second}${last}`
+
+    return {
+      el: (
+        <span>
+          {first}
+          <span style={{ color: colors.terciary }}>{second}</span>
+          {last}
+        </span>
+      ),
+      wordCount: fortuneSentence.length,
+    }
   }
 
   const popped = words.pop()
+  second = words.join(', ')
   const lastFortune = popped ? ` and ${popped}` : ''
+  const fortuneSentence = `${first}${second}${lastFortune}${last}`
 
-  console.log({ words, popped })
-
-  return `${before}
- I see ${words.join(', ')}${lastFortune}  in your future.`
+  return {
+    el: (
+      <span>
+        {first}
+        {words.map((word, i) => {
+          return (
+            <div style={{ display: 'inline-block' }} key={word}>
+              <span style={{ color: colors.terciary }}>{word}</span>
+              {i < words.length - 1 ? <span>,&nbsp;</span> : ''}
+            </div>
+          )
+        })}
+        {popped ? (
+          <span>
+            {' '}
+            and <span style={{ color: colors.terciary }}>{popped}</span>
+          </span>
+        ) : (
+          ''
+        )}
+        {last}
+      </span>
+    ),
+    wordCount: fortuneSentence.length,
+  }
 }
 
 function TarotReadingView({
@@ -37,7 +76,7 @@ function TarotReadingView({
   dispatch: Dispatch<Actions>
 }) {
   const [isDoneTyping, setIsDoneTyping] = useState(false)
-  const fortuneWords = card.upright.toLowerCase().split(',')
+  const fortuneWords = card.upright.toLowerCase().split(', ')
   const text = useMemo(
     () => ({
       agreementMessage: 'Very well then.',
@@ -49,7 +88,7 @@ function TarotReadingView({
       yes: 'Yes',
       no: 'No',
       secret: `${
-        card.secret_type === 'Great Secret' ? 'Great things await you.' : ''
+        card.secret_type === 'Great Secret' ? 'Great things await.' : ''
       }`,
     }),
     [],
@@ -59,7 +98,10 @@ function TarotReadingView({
     text.facinating,
     text.intriguing,
   ])
-  const fortune = getRandomFortune(fortuneWords, text.secret)
+  const { el, wordCount } = useMemo(
+    () => getRandomFortune(fortuneWords, text.secret),
+    [],
+  )
 
   return (
     <ViewContainer>
@@ -72,9 +114,9 @@ function TarotReadingView({
           <span>{randomMessage}</span>
           <Typist.Delay ms={500} />
           <Typist.Backspace count={randomMessage.length} delay={200} />
-          <span>{fortune}</span>
+          <span>{el}</span>
           <Typist.Delay ms={1000} />
-          <Typist.Backspace count={fortune.length} delay={200} />
+          <Typist.Backspace count={wordCount} delay={200} />
           <span>{text.seeCardMessage}</span>
         </Typist>
       </TextWrapper>

@@ -1,11 +1,13 @@
-import { memo, useState } from 'react'
+import { memo, useState, Dispatch } from 'react'
 import styled, { keyframes } from 'styled-components'
 import Drawer from '@material-ui/core/Drawer'
 import { makeStyles } from '@material-ui/core/styles'
 import Typist from 'react-typist'
 
 import { Card } from '@app/types'
-import { CardLayout, ViewContainer } from '@app/components'
+import { CardLayout, ViewContainer, Button } from '@app/components'
+import { Actions } from '@app/views'
+import { colors } from '@app/constants'
 
 const useStyles = makeStyles({
   paperDark: {
@@ -62,6 +64,7 @@ const StyledTitle = styled.h1`
   font-size: 3rem;
   margin: 25px 0 10px 0;
   text-align: center;
+  color: ${colors.terciary};
 `
 
 const StyledUnderTitle = styled.h4`
@@ -74,7 +77,10 @@ const StyledUnderTitle = styled.h4`
 `
 
 const StyledLink = styled.a`
-  color: white;
+  color: ${colors.terciary};
+  text-decoration: none;
+  padding-bottom: 3px;
+  border-bottom: 0.5px solid ${colors.terciary};
 `
 
 const toggleDrawer = (
@@ -99,17 +105,30 @@ const getFormattedDescription = (description: string) => {
     <>
       {sentences.map(sentence => {
         return (
-          <StyledDescription>{sentence.replace('.', '')}.</StyledDescription>
+          <StyledDescription key={sentence}>
+            {sentence.replace('.', '')}.
+          </StyledDescription>
         )
       })}
     </>
   )
 }
 
-function CardRevealingView({ card }: { card: Card }) {
+function CardRevealingView({
+  card,
+  dispatch,
+}: {
+  card: Card
+  dispatch: Dispatch<Actions>
+}) {
   const [openDrawer, setOpenDrawer] = useState<boolean>(false)
+  const [showButton, setShowButton] = useState<boolean>(false)
   const classes = useStyles()
   const formattedDescription = getFormattedDescription(card.description)
+  const text = {
+    learnMore: 'Click on your card to learn more.',
+    goAgain: 'Go again.',
+  }
 
   return (
     <ViewContainer>
@@ -118,18 +137,27 @@ function CardRevealingView({ card }: { card: Card }) {
         <TypistWrapper>
           <Typist
             startDelay={1000}
+            onTypingDone={() => setShowButton(true)}
             cursor={{
               show: true,
               blink: true,
               element: '|',
               hideWhenDone: true,
-              hideWhenDoneDelay: 1000,
+              hideWhenDoneDelay: 0,
             }}
           >
             <Typist.Delay ms={1000} />
-            <span>Click on your card to learn more.</span>
+            <span style={{ color: colors.terciary }}>{text.learnMore}</span>
+            <Typist.Delay ms={1000} />
+            <Typist.Backspace count={text.learnMore.length} delay={200} />
           </Typist>
         </TypistWrapper>
+        <Button
+          hideButton={!showButton}
+          onClick={() => dispatch({ type: 'RESTART' })}
+        >
+          {text.goAgain}
+        </Button>
         <Drawer
           anchor="right"
           open={openDrawer}
