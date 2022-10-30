@@ -3,10 +3,21 @@ import { memo, useEffect, useState } from 'react'
 import { APIClient } from '@app/api'
 import { Card } from '@app/types'
 import { CardLayout } from '@app/components'
+import { getFormattedDescription } from '@app/helpers'
 
 const fetchCards = async () => {
   const res = await APIClient.get('/api/cards').then(res => res.json())
   return res.data
+}
+
+function compare(a: Card, b: Card) {
+  if (a.id < b.id) {
+    return -1
+  }
+  if (a.id > b.id) {
+    return 1
+  }
+  return 0
 }
 
 function CardList() {
@@ -27,9 +38,10 @@ function CardList() {
 
   return (
     <div style={{ overflow: 'scroll', height: '100vh' }}>
-      {cards.map(card => {
+      {cards.sort(compare).map(card => {
+        console.log(card)
         return (
-          <div>
+          <div key={card.slug}>
             <h1>{`${card.id} - ${card.slug}`}</h1>
             <CardLayout
               card={card}
@@ -38,7 +50,7 @@ function CardList() {
               }}
             />
             <p>{card.upright}</p>
-            <p>{card.description}</p>
+            {getFormattedDescription(card.description)}
           </div>
         )
       })}

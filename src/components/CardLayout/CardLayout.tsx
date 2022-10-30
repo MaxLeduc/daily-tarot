@@ -2,7 +2,6 @@ import { memo } from 'react'
 import styled from 'styled-components'
 
 import { Card } from '@app/types'
-import { colors } from '@app/constants'
 
 const StyledImage = styled.img`
   width: 100%;
@@ -10,6 +9,7 @@ const StyledImage = styled.img`
   padding: 5px;
   border-radius: 5px;
   margin-bottom: 10px;
+  background: rgba(218, 165, 32, 0.6);
 `
 
 const StyledButton = styled.button`

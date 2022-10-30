@@ -8,7 +8,7 @@ export const Button = styled.button<{
 }>`
   margin: 0 5px;
   background: ${({ inverted }) => (inverted ? colors.terciary : 'transparent')};
-  color: ${({ inverted }) => (inverted ? '#000e1b' : '#daa520')};
+  color: white;
   border: 1px solid
     ${({ inverted }) => (inverted ? colors.terciary : '#daa520')};
   padding: 5px 25px;

@@ -8,6 +8,7 @@ import { Card } from '@app/types'
 import { CardLayout, ViewContainer, Button } from '@app/components'
 import { Actions } from '@app/views'
 import { colors } from '@app/constants'
+import { getFormattedDescription } from '@app/helpers'
 
 const useStyles = makeStyles({
   paperDark: {
@@ -26,11 +27,6 @@ const Inner = styled.div`
   width: 600px;
   max-width: calc(100vw - 40px);
   padding: 20px;
-`
-
-const StyledDescription = styled.p`
-  line-height: 1.5rem;
-  font-size: 1.1rem;
 `
 
 const CloseButton = styled.button`
@@ -98,22 +94,6 @@ const toggleDrawer = (
   setOpenDrawer(open)
 }
 
-const getFormattedDescription = (description: string) => {
-  const sentences = description.split('. ')
-
-  return (
-    <>
-      {sentences.map(sentence => {
-        return (
-          <StyledDescription key={sentence}>
-            {sentence.replace('.', '')}.
-          </StyledDescription>
-        )
-      })}
-    </>
-  )
-}
-
 function CardRevealingView({
   card,
   dispatch,
@@ -127,7 +107,7 @@ function CardRevealingView({
   const formattedDescription = getFormattedDescription(card.description)
   const text = {
     learnMore: 'Click on your card to learn more.',
-    goAgain: 'Go again.',
+    goAgain: 'Go again',
   }
 
   return (
@@ -147,7 +127,7 @@ function CardRevealingView({
             }}
           >
             <Typist.Delay ms={1000} />
-            <span style={{ color: colors.terciary }}>{text.learnMore}</span>
+            <span>{text.learnMore}</span>
             <Typist.Delay ms={1000} />
             <Typist.Backspace count={text.learnMore.length} delay={200} />
           </Typist>
