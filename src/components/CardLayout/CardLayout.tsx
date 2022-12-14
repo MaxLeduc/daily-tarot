@@ -5,10 +5,12 @@ import { Card } from '@app/types'
 
 const StyledImage = styled.img`
   width: 100%;
-  border: 1px solid white;
+  border: 2px solid white;
   padding: 5px;
   border-radius: 5px;
   margin-bottom: 10px;
+  max-height: 450px;
+  background-color: rgba(235, 235, 235, 0.1);
 `
 
 const StyledButton = styled.button`

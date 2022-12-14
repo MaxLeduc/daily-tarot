@@ -42,7 +42,7 @@
   {
     "id": 5,
     "slug": "the_hierophant",
-    "description": "In many modern packs, the Hierophant is represented with his right hand raised in blessing or benediction, with two fingers pointing skyward and two pointing down, thus forming a bridge between Heaven and Earth reminiscent of that formed by the body of The Hanged Man. The Hierophant is thus a true \"pontiff\", in that he is the builder of the bridge between deity and humanity. In his left hand he held a triple cross. The Hierophant is typically male, even in decks that take a feminist view of the Tarot, such as the Motherpeace Tarot, The Hierophant was also known as \"The Teacher of Wisdom\". In most iconographic depictions, the Hierophant is seen seated on a throne between two pillars symbolizing Law and Liberty or obedience and disobedience, according to different interpretations. He wears a triple crown, and the keys to Heaven are at his feet. Sometimes he is shown with worshippers, as his alternate title is the Pope or, sometimes, Jupiter. The card is also known as \"The High Priest\", as a counterpart to \"The High Priestess\" (which itself is also sometimes known as \"The Papess\", as counterpart to \"The Pope\").",
+    "description": "In many modern packs, the Hierophant is represented with his right hand raised in blessing or benediction, with two fingers pointing skyward and two pointing down, thus forming a bridge between Heaven and Earth reminiscent of that formed by the body of The Hanged Man. The Hierophant is thus a true \"pontiff\", in that he is the builder of the bridge between deity and humanity. The Hierophant was also known as \"The Teacher of Wisdom\". In most iconographic depictions, the Hierophant is seen seated on a throne between two pillars symbolizing Law and Liberty or obedience and disobedience, according to different interpretations. He wears a triple crown, and the keys to Heaven are at his feet. The card is also known as \"The High Priest\", as a counterpart to \"The High Priestess\".",
     "upright": "tradition, conventionality, knowledge",
     "type": 0,
     "wiki_link": "https://en.wikipedia.org/wiki/The_Hierophant"
@@ -58,7 +58,7 @@
   {
     "id": 7,
     "slug": "the_chariot",
-    "description": "A figure sits in a chariot, although he holds no rope, he is pulled by two sphinxes or horses. There is often a black and white motif, for example one of the steeds may be black and the other white. The figure may be crowned or helmeted, and is winged in some representations. The figure may hold a sword or wand. The Thoth Tarot deck has the figure controlling four animals. The mallet, or gavel, on the chariot's coat of arms is a masonic symbol representing self control. A canopy of stars above the charioteer's head is intended to show \"celestial influences\".",
+    "description": "A figure sits in a chariot, although he holds no rope, he is pulled by two sphinxes. The black and white sphinxes are a symbol of opposing forces that the charioteer needs to learn to control. The figure may be crowned or helmeted, and is winged in some representations. The mallet, or gavel, on the chariot's coat of arms is a masonic symbol representing self control. A canopy of stars above the charioteer's head is intended to show \"celestial influences\".",
     "upright": "success, ambition, determination",
     "type": 0,
     "wiki_link": "https://en.wikipedia.org/wiki/The_Chariot_(tarot_card)"
@@ -66,7 +66,7 @@
   {
     "id": 8,
     "slug": "strength",
-    "description": "The design of this card is fairly constant across tarot decks. The key characters are that of a woman and a lion, with the woman leaning over the lion. Many cards, including that of the Rider–Waite–Smith deck, have the woman clasping the lion's jaws. Some feature an Infinity symbol hovering over the woman's head. Other decks have the woman sitting upon the lion, or merely with one hand upon it. Some decks feature just one of the characters; flowers are often presented on this card. According to Eden Gray, the lemniscate above her represents enlightenment and spiritual powers, whereas the lion represents animal passions and earthly cravings.",
+    "description": "The key characters are that of a woman and a lion, with the woman leaning over and clasping the lion's jaws. According to Eden Gray, the lemniscate above her represents enlightenment and spiritual powers, whereas the lion represents animal passions and earthly cravings. The Strength card was originally named Fortitude, and accompanies two of the other cardinal virtues in the Major Arcana: Temperance and Justice.",
     "upright": "courage, compassion, self-confidence",
     "type": 0,
     "wiki_link": "https://en.wikipedia.org/wiki/Strength_(tarot_card)"
@@ -74,7 +74,7 @@
   {
     "id": 9,
     "slug": "the_hermit",
-    "description": "The Rider–Waite version of the card shows an old man, standing on a mountain peak, carrying a staff in one hand and a lit lantern containing a six-pointed star in the other. In the background is a mountain range. According to Eden Gray, his lantern is the Lamp of Truth, used to guide the unknowing, his patriarch's staff helps him navigate narrow paths as he seeks enlightenment and his cloak is a form of discretion. The card is usually thought to connote aspects of healing/recovery, particularly the kind that happens over time. In that regard, The Hermit is sometimes considered the mature and wiser version of The Magician. As such, both cards represent the astrological sign of Virgo. It is the critical factor for the issue at hand. The Hermit is the ”withdrawal from events and relationship to introspect and gather strength”. Seeking the inner voice or calling upon vision from within. A need of understanding and advice, or a wise person who will offer knowing guidance. A card of personal experience and thoughtful temperance.",
+    "description": "The Rider–Waite version of the card shows an old man, standing on a mountain peak, carrying a staff in one hand and a lit lantern containing a six-pointed star in the other. In the background is a mountain range. According to Eden Gray, his lantern is the Lamp of Truth, used to guide the unknowing, his patriarch's staff helps him navigate narrow paths as he seeks enlightenment and his cloak is a form of discretion. The card is usually thought to connote aspects of healing/recovery, particularly the kind that happens over time. In that regard, The Hermit is sometimes considered the mature and wiser version of The Magician. The Hermit is the ”withdrawal from events and relationship to introspect and gather strength”. Seeking the inner voice or calling upon vision from within. A need of understanding and advice, or a wise person who will offer knowing guidance. A card of personal experience and thoughtful temperance.",
     "upright": "introspection, contemplation, solitude",
     "type": 0,
     "wiki_link": "https://en.wikipedia.org/wiki/The_Hermit_(tarot_card)"
@@ -82,7 +82,7 @@
   {
     "id": 10,
     "slug": "wheel_of_fortune",
-    "description": "On the card shown, though not necessarily on others, there are also four winged creatures in the corners of the card, representing the symbols of the four Evangelists (The Lion, the Ox, the Man and the Eagle). These four Evangelists are also represented by the four fixed astrological signs: Taurus, Leo, Scorpio and Aquarius. In addition a representation of the god Anubis is seen rising with the wheel on the right side, while the snake-like Typhon descends on the left. On the wheel, alternating with the letters T-A-R-O are the Hebrew letters י-ה-ו-ה, usually transliterated as YHWH (Yahweh - Hebrew for God). A common aspect to most interpretations of this card within a reading is to introduce an element of change in the querent's life, such change being in station, position or fortune: such as the rich becoming poor, or the poor becoming rich.",
+    "description": "Four winged creatures are in the corners of the card, representing the symbols of the four Evangelists (The Lion, the Ox, the Man and the Eagle). In addition a representation of the god Anubis is seen rising with the wheel on the right side, while the snake-like Typhon descends on the left. On the wheel, alternating with the letters T-A-R-O are the Hebrew letters י-ה-ו-ה, usually transliterated as YHWH (Yahweh - Hebrew for God). A common aspect to most interpretations of this card within a reading is to introduce an element of change in the querent's life, such change being in station, position or fortune: such as the rich becoming poor, or the poor becoming rich.",
     "upright": "change, fate, luck",
     "type": 0,
     "wiki_link": "https://en.wikipedia.org/wiki/Wheel_of_Fortune_(tarot_card)"
@@ -98,7 +98,7 @@
   {
     "id": 12,
     "slug": "the_hanged_man",
-    "description": "It depicts a pittura infamante, an image of a man being hanged upside-down by one ankle. However, the solemn expression on his face traditionally suggests that he is there by his own accord, and the card is meant to represent self-sacrifice more so than it does corporal punishment or criminality. In other interpretations, The Hanged Man is a depiction of the Norse god Odin, who suspended himself from a tree in order to gain knowledge. There is also a Christian interpretation that portrays Judas Iscariot, and include the bags of silver in his hands. In the Lo Scarabeo African American tarot deck the 12th card of the major arcana is the Observer, depicting the Nigerian god \"Ifa\" of fate and destiny blindfolded and surrounded by eyes.",
+    "description": "The card depicts a pittura infamante, an image of a man being hanged upside-down by one ankle. However, the solemn expression on his face traditionally suggests that he is there by his own accord, and the card is meant to represent self-sacrifice more so than it does corporal punishment or criminality. In other interpretations, The Hanged Man is a depiction of the Norse god Odin, who suspended himself from a tree in order to gain knowledge.",
     "upright": "sacrifice, waiting, contemplation",
     "type": 0,
     "wiki_link": "https://en.wikipedia.org/wiki/The_Hanged_Man_(tarot_card)"
@@ -106,7 +106,7 @@
   {
     "id": 13,
     "slug": "death",
-    "description": "Some decks, such as the Tarot of Marseilles and the Visconti Sforza Tarot omit the name from the card, calling it \"The Card with No Name\", often with the implication of a broader meaning than literal death. There are other decks that title Death as \"Rebirth\" or \"Death-Rebirth.\" The Death card usually depicts the Grim Reaper, the personification of Death. In some decks, the Grim Reaper is riding a pale horse, and often he is wielding a sickle or scythe. Surrounding the Grim Reaper are dead and dying people from all classes, including kings, bishops and commoners. The Rider–Waite tarot deck depicts the skeleton carrying a black standard emblazoned with a white rose. In the background are two towers and a setting or rising sun.",
+    "description": "Some decks, such as the Tarot of Marseilles and the Visconti Sforza Tarot omit the name from the card, calling it \"The Card with No Name\", often with the implication of a broader meaning than literal death. The Death card usually depicts the Grim Reaper, the personification of Death. It is riding a pale horse. Surrounding the Grim Reaper are dead and dying people from all classes, including kings, bishops and commoners. The Rider–Waite tarot deck depicts the skeleton carrying a black standard emblazoned with a white rose. In the background are two towers and a setting or rising sun.",
     "upright": "transformation, transition, change",
     "type": 0,
     "wiki_link": "https://en.wikipedia.org/wiki/Death_(tarot_card)"
@@ -114,7 +114,7 @@
   {
     "id": 14,
     "slug": "temperance",
-    "description": "Temperance is almost invariably depicted as a person pouring liquid from one receptacle into another. Historically, this was a standard symbol of the virtue temperance, one of the cardinal virtues, representing the dilution of wine with water. In many decks, the person is a winged angel, usually female or androgynous, and stands with one foot on water and one foot on land. At the end of the path in the lower left part of the card, there is a crown to show the attainment of a goal, or mastery thereof. In the Rider–Waite image by Pamela Coleman-Smith (shown on this page) the Hebrew Tetragrammaton is on the angel's chest above the square and triangle. In the derivative Tarot decks this is usually not included.",
+    "description": "Temperance is almost invariably depicted as a person pouring liquid from one receptacle into another. Historically, this was a standard symbol of the virtue temperance, one of the cardinal virtues, representing the dilution of wine with water. In many decks, the person is a winged angel that stands with one foot on water and one foot on land. At the end of the path in the lower left part of the card, there is a crown to show the attainment of a goal, or mastery thereof.",
     "upright": "harmony, peace, patience",
     "type": 0,
     "wiki_link": "https://en.wikipedia.org/wiki/Temperance_(tarot_card)"
@@ -122,7 +122,7 @@
   {
     "id": 15,
     "slug": "the_devil",
-    "description": "In the Rider–Waite–Smith deck, the Devil is derived in part from Eliphas Levi's famous illustration ”Baphomet” in his Dogme et Rituel de la Haute Magie (1855). In the Rider–Waite–Smith deck, the Devil has harpy feet, ram horns, bat wings, a reversed pentagram on the forehead, a raised right hand and a lowered left hand holding a torch. He squats on a square pedestal. Two naked demons (one male, one female) with tails stand chained to the pedestal. Levi's Baphomet has bat wings, goat horns, a raised right hand, lowered left hand, breasts and a torch on his head, and also combines human and bestial features. Many modern tarot decks portray the Devil as a satyr-like creature. According to Waite, the Devil is standing on an altar.",
+    "description": "The Devil has harpy feet, ram horns, bat wings, a reversed pentagram on the forehead, a raised right hand and a lowered left hand holding a torch. He squats on a square pedestal. Two naked demons with tails stand chained to the pedestal. The Devil represents the Fool's involvement in materialism and complacency. Many modern tarot decks portray the Devil as a satyr-like creature.",
     "upright": "excess, powerlessness, obsession",
     "type": 0,
     "wiki_link": "https://en.wikipedia.org/wiki/The_Devil_(Tarot_card)"
@@ -130,7 +130,7 @@
   {
     "id": 16,
     "slug": "the_tower",
-    "description": "A variety of explanations for the images on the card have been attempted. For example, it may be a reference to the biblical story of the Tower of Babel, where God destroys a tower built by mankind to reach Heaven. Alternatively, the Harrowing of Hell was a frequent subject in the liturgical drama of the Late Middle Ages, and Hell could be depicted as a great gate knocked asunder by Jesus Christ.[citation needed] The Minchiate version of the deck may represent Adam and Eve's expulsion from the Garden of Eden. The Tower is sometimes interpreted as meaning danger, crisis, sudden change, destruction, higher learning, and liberation.",
+    "description": "A variety of explanations for the images on the card have been attempted. For example, it may be a reference to the biblical story of the Tower of Babel, where God destroys a tower built by mankind to reach Heaven. The Tower is sometimes interpreted as meaning danger, crisis, sudden change, destruction, higher learning, and liberation.",
     "upright": "upheaval, sudden change, chaos",
     "type": 0,
     "wiki_link": "https://en.wikipedia.org/wiki/The_Tower_(tarot_card)"
@@ -146,7 +146,7 @@
   {
     "id": 18,
     "slug": "the_moon",
-    "description": "The card depicts a night scene, where two large pillars are shown. A wolf and a domesticated dog howl at the Moon while a crayfish emerges from the water. The Moon has ”sixteen chief and sixteen secondary rays” and ”[is] shedding the moisture of fertilizing dew in great drops” (totaling 15 in the Rider–Waite deck) which are all Yodh-shaped. The card represents life of the imagination apart from life of the spirit... The dog and wolf are the fears of the natural mind in the presence of that place of exit, when there is only reflected light to guide it... The intellectual light is a reflection and beyond it is the unknown mystery which it cannot reveal.\" Additionally, \"It illuminates our animal nature”.",
+    "description": "The card depicts a night scene, where two large pillars are shown. A wolf and a domesticated dog howl at the Moon while a crayfish emerges from the water. The Moon has ”sixteen chief and sixteen secondary rays” and ”[is] shedding the moisture of fertilizing dew in great drops”. The card represents life of the imagination apart from life of the spirit. The dog and wolf are the fears of the natural mind in the presence of that place of exit, when there is only reflected light to guide it. \"It illuminates our animal nature”.",
     "upright": "intuition, secrets, complexity",
     "type": 0,
     "wiki_link": "https://en.wikipedia.org/wiki/The_Moon_(tarot_card)"
@@ -162,7 +162,7 @@
   {
     "id": 20,
     "slug": "judgement",
-    "description": "The traditional scene is modeled after Christian imagery of the Resurrection and Last Judgment. An angel, possibly Metatron, probably Israfil, is depicted blowing a great trumpet, from which hangs the flag of St. George. A group of resurrected people (man, woman, and child) of sallow complexion stand, arms spread, looking up at the angel in awe. The Sleeping Dead are emerging from crypts or graves. There are snow-covered mountains in the background indicating a winter theme, similar to The Hermit, as a symbolical ending.",
+    "description": "The traditional scene is modeled after the imagery of the Resurrection and Last Judgment. An angel is depicted blowing a great trumpet, from which hangs the flag of Saint George. A group of resurrected people (man, woman, and child) of sallow complexion stand, arms spread, looking up at the angel in awe. There are snow-covered mountains in the background indicating a winter theme as a symbolical ending. This card is a reminder that everything comes to an end and that new beginnings are coming.",
     "upright": "awakening, purpose, reflection",
     "type": 0,
     "wiki_link": "https://en.wikipedia.org/wiki/Judgement_(tarot_card)"
@@ -170,7 +170,7 @@
   {
     "id": 21,
     "slug": "the_world",
-    "description": "In the traditional Tarot of Marseilles, as well as the later Rider–Waite tarot deck, a naked woman hovers or dances above the Earth holding a staff in each hand, surrounded by a wreath, being watched by the four living creatures (or hayyoth) of Jewish mythology: a man, a lion, an ox, and an eagle. According to Robert M. Place in his book The Tarot, the four beasts on the World card represent the fourfold structure of the physical world—which frames the sacred center of the world, a place where the divine can manifest. Sophia, meaning Prudence or Wisdom (the dancing woman in the center), is spirit or the sacred center, the fifth element. Prudence is the fourth of the Cardinal virtues in the tarot. The lady in the center is a symbol of the goal of mystical seekers. Whenever it comes up, this card represents what is truly desired.",
+    "description": "A dancing figure hovers above the Earth holding a staff in each hand, surrounded by a wreath, being watched by a man, a lion, an ox, and an eagle. These observers are representatives of the natural world, the kingdom of beasts. Together they form a symbol of harmony. The fifth element, the dancer, symbolizes balance and evolution in motion. A wreath of flowers surrounds the figure, a symbol of success. To encounter the World is to encounter a great unity and wholeness, but not one that is static, but rather dynamic and ever-changing.",
     "upright": "achievement, wholeness, harmony",
     "type": 0,
     "wiki_link": "https://en.wikipedia.org/wiki/The_World_(tarot_card)"

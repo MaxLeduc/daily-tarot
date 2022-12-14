@@ -18,8 +18,11 @@ const StyledText = styled.span<{ first?: boolean }>`
 const StyledLink = styled.a`
   color: ${colors.terciary};
   text-decoration: none;
-  padding-bottom: 3px;
-  border-bottom: 0.5px solid ${colors.terciary};
+
+  &:hover {
+    color: #8a0303;
+    transition: color 3s ease;
+  }
 `
 
 function BottomBar() {
